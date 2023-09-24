@@ -6,6 +6,7 @@ local foreground = hsl("#dcdcdc")
 local gray       = hsl("#888888")
 local darkgray   = hsl("#282828")
 local green      = hsl("#99ad6a")
+local sogreen    = hsl("#00ff00")
 local yellow     = hsl("#ffdc00")
 local orange     = hsl("#ffa500")
 local blue       = hsl("#556779")
@@ -28,10 +29,10 @@ local theme = lush(function(injected_functions)
     -- CursorColumn   { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     -- CursorLine     { }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory      { fg=yellow, gui="bold" }, -- Directory names (and other special names in listings)
-    DiffAdd        { fg=green }, -- Diff mode: Added line |diff.txt|
-    DiffChange     { fg=orange, }, -- Diff mode: Changed line |diff.txt|
+    DiffAdd        { fg=sogreen }, -- Diff mode: Added line |diff.txt|
+    DiffChange     { }, -- Diff mode: Changed line |diff.txt|
     DiffDelete     { fg=red }, -- Diff mode: Deleted line |diff.txt|
-    -- DiffText       { }, -- Diff mode: Changed text within a changed line |diff.txt|
+    DiffText       { fg=orange }, -- Diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer    { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     -- TermCursor     { }, -- Cursor in a focused terminal
     -- TermCursorNC   { }, -- Cursor in an unfocused terminal
@@ -172,22 +173,8 @@ local theme = lush(function(injected_functions)
     -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
     -- DiagnosticSignOk           { } , -- Used for "Ok" signs in sign column.
 
-    -- Tree-Sitter syntax groups.
-    --
     -- See :h treesitter-highlight-groups, some groups may not be listed,
     -- submit a PR fix to lush-template!
-    --
-    -- Tree-Sitter groups are defined with an "@" symbol, which must be
-    -- specially handled to be valid lua code, we do this via the special
-    -- sym function. The following are all valid ways to call the sym function,
-    -- for more details see https://www.lua.org/pil/5.html
-    --
-    -- sym("@text.literal")
-    -- sym('@text.literal')
-    -- sym"@text.literal"
-    -- sym'@text.literal'
-    --
-    -- For more information see https://github.com/rktjmp/lush.nvim/issues/109
 
     sym"@text.literal"      { fg=foreground }, -- Comment
     -- sym"@text.reference"    { }, -- Identifier
