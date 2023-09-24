@@ -11,6 +11,7 @@ local yellow     = hsl("#ffdc00")
 local orange     = hsl("#ffa500")
 local blue       = hsl("#556779")
 local red        = hsl("#ff0000")
+local brown      = hsl("#8a5c00")
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
 -- support an annotation like the following. Consult your server documentation.
@@ -93,7 +94,7 @@ local theme = lush(function(injected_functions)
 
     -- See :h group-name
 
-    Comment        { fg=gray }, -- Any comment
+    Comment        { fg=brown }, -- Any comment
 
     Constant       { fg=foreground }, -- (*) Any constant
     String         { fg=green }, --   A string constant: "this is a string"
@@ -138,40 +139,40 @@ local theme = lush(function(injected_functions)
 
     -- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
     --
-    -- LspReferenceText            { } , -- Used for highlighting "text" references
-    -- LspReferenceRead            { } , -- Used for highlighting "read" references
-    -- LspReferenceWrite           { } , -- Used for highlighting "write" references
-    -- LspCodeLens                 { } , -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
-    -- LspCodeLensSeparator        { } , -- Used to color the seperator between two or more code lens.
-    -- LspSignatureActiveParameter { } , -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
+    -- LspReferenceText            { }, -- Used for highlighting "text" references
+    -- LspReferenceRead            { }, -- Used for highlighting "read" references
+    -- LspReferenceWrite           { }, -- Used for highlighting "write" references
+    -- LspCodeLens                 { }, -- Used to color the virtual text of the codelens. See |nvim_buf_set_extmark()|.
+    -- LspCodeLensSeparator        { }, -- Used to color the seperator between two or more code lens.
+    -- LspSignatureActiveParameter { }, -- Used to highlight the active parameter in the signature help. See |vim.lsp.handlers.signature_help()|.
 
     -- See :h diagnostic-highlights, some groups may not be listed, submit a PR fix to lush-template!
     --
-    -- DiagnosticError            { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticWarn             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticInfo             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticHint             { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticOk               { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
-    -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
-    -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
-    -- DiagnosticVirtualTextHint  { } , -- Used for "Hint" diagnostic virtual text.
-    -- DiagnosticVirtualTextOk    { } , -- Used for "Ok" diagnostic virtual text.
-    -- DiagnosticUnderlineError   { } , -- Used to underline "Error" diagnostics.
-    -- DiagnosticUnderlineWarn    { } , -- Used to underline "Warn" diagnostics.
-    -- DiagnosticUnderlineInfo    { } , -- Used to underline "Info" diagnostics.
-    -- DiagnosticUnderlineHint    { } , -- Used to underline "Hint" diagnostics.
-    -- DiagnosticUnderlineOk      { } , -- Used to underline "Ok" diagnostics.
-    -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
-    -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingHint     { } , -- Used to color "Hint" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingOk       { } , -- Used to color "Ok" diagnostic messages in diagnostics float.
-    -- DiagnosticSignError        { } , -- Used for "Error" signs in sign column.
-    -- DiagnosticSignWarn         { } , -- Used for "Warn" signs in sign column.
-    -- DiagnosticSignInfo         { } , -- Used for "Info" signs in sign column.
-    -- DiagnosticSignHint         { } , -- Used for "Hint" signs in sign column.
-    -- DiagnosticSignOk           { } , -- Used for "Ok" signs in sign column.
+    -- DiagnosticError            { }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticWarn             { }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticInfo             { }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticHint             { }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticOk               { }, -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    -- DiagnosticVirtualTextError { }, -- Used for "Error" diagnostic virtual text.
+    -- DiagnosticVirtualTextWarn  { }, -- Used for "Warn" diagnostic virtual text.
+    -- DiagnosticVirtualTextInfo  { }, -- Used for "Info" diagnostic virtual text.
+    -- DiagnosticVirtualTextHint  { }, -- Used for "Hint" diagnostic virtual text.
+    -- DiagnosticVirtualTextOk    { }, -- Used for "Ok" diagnostic virtual text.
+    -- DiagnosticUnderlineError   { }, -- Used to underline "Error" diagnostics.
+    -- DiagnosticUnderlineWarn    { }, -- Used to underline "Warn" diagnostics.
+    -- DiagnosticUnderlineInfo    { }, -- Used to underline "Info" diagnostics.
+    -- DiagnosticUnderlineHint    { }, -- Used to underline "Hint" diagnostics.
+    -- DiagnosticUnderlineOk      { }, -- Used to underline "Ok" diagnostics.
+    -- DiagnosticFloatingError    { }, -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
+    -- DiagnosticFloatingWarn     { }, -- Used to color "Warn" diagnostic messages in diagnostics float.
+    -- DiagnosticFloatingInfo     { }, -- Used to color "Info" diagnostic messages in diagnostics float.
+    -- DiagnosticFloatingHint     { }, -- Used to color "Hint" diagnostic messages in diagnostics float.
+    -- DiagnosticFloatingOk       { }, -- Used to color "Ok" diagnostic messages in diagnostics float.
+    -- DiagnosticSignError        { }, -- Used for "Error" signs in sign column.
+    -- DiagnosticSignWarn         { }, -- Used for "Warn" signs in sign column.
+    -- DiagnosticSignInfo         { }, -- Used for "Info" signs in sign column.
+    -- DiagnosticSignHint         { }, -- Used for "Hint" signs in sign column.
+    -- DiagnosticSignOk           { }, -- Used for "Ok" signs in sign column.
 
     -- See :h treesitter-highlight-groups, some groups may not be listed,
     -- submit a PR fix to lush-template!
@@ -182,7 +183,7 @@ local theme = lush(function(injected_functions)
     -- sym"@text.uri"          { }, -- Underlined
     -- sym"@text.underline"    { }, -- Underlined
     sym"@text.todo"         { gui="bold" }, -- Todo
-    sym"@comment"           { fg=gray }, -- Comment
+    sym"@comment"           { fg=brown }, -- Comment
     sym"@punctuation"       { fg=foreground }, -- Delimiter
     sym"@constant"          { fg=orange }, -- Constant
     -- sym"@constant.builtin"  { }, -- Special
