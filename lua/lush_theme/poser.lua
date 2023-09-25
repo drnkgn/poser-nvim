@@ -94,7 +94,7 @@ local theme = lush(function(injected_functions)
 
     -- See :h group-name
 
-    Comment        { fg=brown }, -- Any comment
+    Comment        { fg=gray }, -- Any comment
 
     Constant       { fg=foreground }, -- (*) Any constant
     String         { fg=green }, --   A string constant: "this is a string"
@@ -183,7 +183,7 @@ local theme = lush(function(injected_functions)
     -- sym"@text.uri"          { }, -- Underlined
     -- sym"@text.underline"    { }, -- Underlined
     sym"@text.todo"         { gui="bold" }, -- Todo
-    sym"@comment"           { fg=brown }, -- Comment
+    sym"@comment"           { fg=gray }, -- Comment
     sym"@punctuation"       { fg=foreground }, -- Delimiter
     sym"@constant"          { fg=orange }, -- Constant
     -- sym"@constant.builtin"  { }, -- Special
