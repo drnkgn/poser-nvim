@@ -111,7 +111,7 @@ local theme = lush(function(injected_functions)
 
     Constant       { fg=foreground }, -- (*) Any constant
     String         { fg=green }, --   A string constant: "this is a string"
-    Character      { fg=orange }, --   A character constant: 'c', '\n'
+    Character      { fg=green }, --   A character constant: 'c', '\n'
     Number         { fg=foreground }, --   A number constant: 234, 0xff
     Boolean        { fg=yellow }, --   A boolean constant: TRUE, false
     Float          { fg=foreground }, --   A floating point constant: 2.3e10
@@ -138,7 +138,7 @@ local theme = lush(function(injected_functions)
     -- Structure      { }, --   struct, union, enum, etc.
     Typedef        { fg=yellow, gui="bold" }, --   A typedef
 
-    Special        { fg=yellow, gui="bold" }, -- (*) Any special symbol
+    Special        { fg=foreground }, -- (*) Any special symbol
     -- SpecialChar    { }, --   Special character in a constant
     -- Tag            { }, --   You can use CTRL-] on this
     Delimiter      { fg=foreground }, --   Character that needs attention
@@ -149,6 +149,11 @@ local theme = lush(function(injected_functions)
     -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
     -- Error          { }, -- Any erroneous construct
     Todo           { gui="bold" }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+
+    -- vim-fugitive
+    --
+    diffRemoved    { fg=red }, -- Any erroneous construct
+    diffAdded      { fg=green }, -- Added diff
 
     -- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
     --
@@ -204,7 +209,7 @@ local theme = lush(function(injected_functions)
     -- sym"@define"            { }, -- Define
     -- sym"@macro"             { }, -- Macro
     sym"@string"            { fg=green }, -- String
-    sym"@string.escape"     { fg=orange }, -- SpecialChar
+    sym"@string.escape"     { fg=green }, -- SpecialChar
     -- sym"@string.special"    { }, -- SpecialChar
     sym"@character"         { fg=orange }, -- Character
     -- sym"@character.special" { }, -- SpecialChar
@@ -219,22 +224,28 @@ local theme = lush(function(injected_functions)
     -- sym"@field"             { }, -- Identifier
     -- sym"@property"          { fg=blue }, -- Identifier
     sym"@constructor"       { fg=gray }, -- Special
-    sym"@conditional"       { fg=yellow }, -- Conditional
-    sym"@repeat"            { fg=yellow }, -- Repeat
-    sym"@label"             { fg=yellow }, -- Label
+    sym"@conditional"       { fg=yellow, gui="bold" }, -- Conditional
+    sym"@repeat"            { fg=yellow, gui="bold" }, -- Repeat
+    sym"@label"             { fg=yellow, gui="bold" }, -- Label
     sym"@operator"          { fg=foreground }, -- Operator
     sym"@keyword"           { fg=yellow, gui="bold" }, -- Keyword
     sym"@exception"         { fg=yellow, gui="bold" }, -- Exception
     -- sym"@variable"          { }, -- Identifier
+    sym"@variable.builtin"  { fg=yellow, gui="bold" }, -- Identifier
     sym"@type"              { fg=gray }, -- Type
     sym"@type.definition"   { fg=gray }, -- Typedef
     -- sym"@storageclass"      { }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
     -- sym"@namespace"         { }, -- Identifier
-    sym"@include"           { fg=yellow, gui="bold" }, -- Include
+    sym"@include"           { fg=gray }, -- Include
     sym"@preproc"           { fg=gray }, -- PreProc
     -- sym"@debug"             { }, -- Debug
-    -- sym"@tag"               { }, -- Tag
+    sym"@tag"               { fg=yellow, gui="bold" }, -- Tag
+    sym"@tag.delimiter"     { fg=foreground }, -- Tag
+    sym"@tag.attribute"     { fg=gray }, -- Tag
+
+    -- typescript
+    sym"@include.typescript"    { fg=yellow, gui="bold" }, -- Include
 }
 end)
 
