@@ -245,7 +245,13 @@ local theme = lush(function(injected_functions)
     sym"@tag.attribute"     { fg=gray }, -- Tag
 
     -- typescript
-    sym"@include.typescript"    { fg=yellow, gui="bold" }, -- Include
+    sym"@include.typescript"       { fg=yellow, gui="bold" }, -- Include
+
+    -- latex
+    sym"@text.environment.latex"   { fg=yellow, gui="bold" }, -- Environment
+    sym"@text.strong.latex"        { fg=foreground, gui="bold" },-- textbf
+    sym"@text.emphasis.latex"      { fg=foreground, gui="italic" },-- textit
+    sym"@function.latex"           { fg=yellow, gui="bold" }, -- Environment
 }
 end)
 
