@@ -92,8 +92,8 @@ local theme = lush(function(injected_functions)
     -- SpellRare      { }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
     StatusLine     { fg=foreground }, -- Status line of current window
     -- StatusLineNC   { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    -- TabLine        { }, -- Tab pages line, not active tab page label
-    -- TabLineFill    { }, -- Tab pages line, where there are no labels
+    TabLine        { bg=darkgray, fg=gray }, -- Tab pages line, not active tab page label
+    TabLineFill    { bg=darkgray }, -- Tab pages line, where there are no labels
     -- TabLineSel     { }, -- Tab pages line, active tab page label
     Title          { fg=orange }, -- Titles for output from ":set all", ":autocmd" etc.
     -- Visual         { }, -- Visual mode selection
@@ -134,7 +134,7 @@ local theme = lush(function(injected_functions)
     -- PreCondit      { }, --   Preprocessor #if, #else, #endif, etc.
 
     Type           { fg=gray, gui="bold" }, -- (*) int, long, char, etc.
-    -- StorageClass   { }, --   static, register, volatile, etc.
+    StorageClass   { fg=yellow, gui="bold" }, --   static, register, volatile, etc.
     -- Structure      { }, --   struct, union, enum, etc.
     Typedef        { fg=yellow, gui="bold" }, --   A typedef
 
@@ -234,7 +234,7 @@ local theme = lush(function(injected_functions)
     sym"@variable.builtin"  { fg=yellow, gui="bold" }, -- Identifier
     sym"@type"              { fg=gray }, -- Type
     sym"@type.definition"   { fg=gray }, -- Typedef
-    -- sym"@storageclass"      { }, -- StorageClass
+    sym"@storageclass"      { fg=yellow, gui="bold" }, -- StorageClass
     -- sym"@structure"         { }, -- Structure
     -- sym"@namespace"         { }, -- Identifier
     sym"@include"           { fg=gray }, -- Include
