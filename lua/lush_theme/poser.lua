@@ -22,7 +22,7 @@ local green      = hsl("#99ad6a")
 local sogreen    = hsl("#00ff00")
 local yellow     = hsl("#ffdc00")
 local orange     = hsl("#ffa500")
-local blue       = hsl("#556779")
+local blue       = hsl("#96a6c8")
 local red        = hsl("#ff0000")
 local brown      = hsl("#8a5c00")
 
@@ -154,6 +154,9 @@ local theme = lush(function(injected_functions)
     --
     diffRemoved    { fg=red }, -- Any erroneous construct
     diffAdded      { fg=green }, -- Added diff
+
+    -- MatLab
+    matlabFunction { fg=yellow, gui="bold" },
 
     -- See :h lsp-highlight, some groups may not be listed, submit a PR fix to lush-template!
     --
