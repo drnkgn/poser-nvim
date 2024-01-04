@@ -117,7 +117,7 @@ local theme = lush(function(injected_functions)
     Float          { fg=foreground }, --   A floating point constant: 2.3e10
 
     Identifier     { fg=foreground }, -- (*) Any variable name
-    -- Function       { }, --   Function name (also: methods for classes)
+    Function       { fg=blue }, --   Function name (also: methods for classes)
 
     Statement      { fg=yellow, gui="bold" }, -- (*) Any statement
     Conditional    { fg=yellow }, --   if, then, else, endif, switch, etc.
@@ -214,16 +214,16 @@ local theme = lush(function(injected_functions)
     sym"@string"            { fg=green }, -- String
     sym"@string.escape"     { fg=green }, -- SpecialChar
     -- sym"@string.special"    { }, -- SpecialChar
-    sym"@character"         { fg=orange }, -- Character
+    sym"@character"         { fg=green }, -- Character
     -- sym"@character.special" { }, -- SpecialChar
     -- sym"@number"            { }, -- Number
     -- sym"@boolean"           { }, -- Boolean
     -- sym"@float"             { }, -- Float
-    -- sym"@function"          { }, -- Function
+    sym"@function"          { fg=foreground }, -- Function
     -- sym"@function.builtin"  { }, -- Special
     -- sym"@function.macro"    { }, -- Macro
     -- sym"@parameter"         { }, -- Identifier
-    sym"@method"            { fg=foreground }, -- Function
+    sym"@method"            { fg=blue }, -- Function
     -- sym"@field"             { }, -- Identifier
     -- sym"@property"          { fg=blue }, -- Identifier
     sym"@constructor"       { fg=gray }, -- Special
