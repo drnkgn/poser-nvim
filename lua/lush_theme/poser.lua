@@ -256,6 +256,21 @@ local theme = lush(function(injected_functions)
     sym"@text.strong.latex"        { fg=foreground, gui="bold" },-- textbf
     sym"@text.emphasis.latex"      { fg=foreground, gui="italic" },-- textit
     sym"@function.latex"           { fg=yellow, gui="bold" }, -- Environment
+
+    -- markdown-inline
+    sym"@markup.italic.markdown_inline"   { gui="italic" },
+    sym"@markup.strong.markdown_inline"   { gui="bold" },
+    sym"@markup.link.label"               { fg=green, gui="underline" },
+    sym"@markup.heading"                  { fg=blue },
+    sym"@markup.list"                     { fg=gray },
+    sym"@markup.raw"                      { fg=brown },
+
+    sym"@label.markdown"                  { fg=brown },
+
+    -- sym"@text.reference.markdown_inline"  { fg=blue },
+    -- sym"@text.todo.unchecked.markdown"    { gui="regular"},
+    -- sym"@text.literal.markdown_inline"    { fg=gray },
+    sym"@punctuation.special.markdown"    { fg=gray },
 }
 end)
 
