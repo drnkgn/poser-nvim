@@ -196,8 +196,8 @@ local theme = lush(function(injected_functions)
     -- DiagnosticSignOk           { }, -- Used for "Ok" signs in sign column.
 
     -- See :h treesitter-highlight-groups, some groups may not be listed,
-    -- submit a PR fix to lush-template!
 
+    -- TODO: update some highlight groups
     sym"@text.literal"      { fg=foreground }, -- Comment
     -- sym"@text.reference"    { }, -- Identifier
     sym"@text.title"        { fg=orange }, -- Title
@@ -246,6 +246,13 @@ local theme = lush(function(injected_functions)
     sym"@tag"               { fg=yellow, gui="bold" }, -- Tag
     sym"@tag.delimiter"     { fg=foreground }, -- Tag
     sym"@tag.attribute"     { fg=gray }, -- Tag
+
+    -- c
+    sym"@type.builtin.c"    { fg=gray }, -- Type
+    sym"@keyword.import.c"  { fg=gray }, -- Include
+
+    -- python
+    sym"@function.method.call.python"     { fg=blue }, -- Method
 
     -- typescript
     sym"@include.typescript"       { fg=yellow, gui="bold" }, -- Include
